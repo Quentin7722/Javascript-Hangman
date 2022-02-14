@@ -1,6 +1,7 @@
 const secretWord = document.getElementById("secret-word");
 const spanKey = document.querySelectorAll(".span-key");
 const spanGuess = document.getElementById("span-guess");
+const img = document.getElementById("img");
 const data = [
   "demain",
   "voler",
@@ -82,7 +83,11 @@ function choose(e) {
   } else {
     el.style.backgroundColor = "red";
     guess++;
-    spanGuess.textContent = `il vous reste ${6 - guess} essais`;
+    img.setAttribute("src", `./hangman-${guess}.png`);
+
+    spanGuess.textContent = `il vous reste ${6 - guess} ${
+      guess > 4 ? "vie" : "vies"
+    }`;
     el.removeEventListener("click", choose);
     if (guess == 6) {
       spanGuess.textContent = `Perdu !`;
