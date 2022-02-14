@@ -83,7 +83,7 @@ function choose(e) {
   } else {
     el.style.backgroundColor = "red";
     guess++;
-    img.setAttribute("src", `./hangman-${guess}.png`);
+    img.setAttribute("src", `./Hangman-${guess}.png`);
 
     spanGuess.textContent = `il vous reste ${6 - guess} ${
       guess > 4 ? "vie" : "vies"
